@@ -1,18 +1,18 @@
 import React, { useState } from "react";
-import Item from "./item";
 
 function App() {
   const [items, setitems] = useState([]);
-  const [currentValue, setValue] = useState("");
+  const [inputValue, setInput] = useState("");
   function changeItem(event) {
     let value = event.target.value;
-    setValue(value);
+    setInput(value);
   }
 
   function addItem(event) {
     event.preventDefault();
-    let newItem = currentValue;
+    let newItem = inputValue;
     setitems([...items, newItem]);
+    setInput("");
   }
   return (
     <div className="container">
@@ -24,7 +24,7 @@ function App() {
           type="text"
           name="name"
           onChange={changeItem}
-          value={currentValue}
+          value={inputValue}
         />
         <button onClick={addItem}>
           <span>Add</span>
@@ -33,7 +33,7 @@ function App() {
       <div>
         <ul>
           {items.map((item, index) => {
-            return <Item name={item} key={index} />;
+            return <li key={index}> {item} </li>;
           })}
           ;
         </ul>
