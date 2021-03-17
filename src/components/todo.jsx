@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import Item from "./item";
+import Input from "./input";
 
-function Form() {
+function Todo() {
   const [items, setitems] = useState([]);
   const [inputValue, setInput] = useState("");
   function changeItem(event) {
@@ -24,17 +25,11 @@ function Form() {
   }
   return (
     <div>
-      <form className="form">
-        <input
-          type="text"
-          name="name"
-          onChange={changeItem}
-          value={inputValue}
-        />
-        <button onClick={addItem}>
-          <span>Add</span>
-        </button>
-      </form>
+      <Input
+        changeItemProp={changeItem}
+        inputeValueProp={inputValue}
+        addItemProp={addItem}
+      />
       <div>
         <ul>
           {items.map((item, index) => {
@@ -52,4 +47,4 @@ function Form() {
     </div>
   );
 }
-export default Form;
+export default Todo;

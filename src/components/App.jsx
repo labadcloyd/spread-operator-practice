@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Form from "./form";
+import Todo from "./todo";
 
 function App() {
   return (
@@ -7,7 +7,7 @@ function App() {
       <div className="heading">
         <h1>To-Do List</h1>
       </div>
-      <Form />
+      <Todo />
     </div>
   );
 }
