@@ -11,14 +11,21 @@ function Item(props) {
     <div>
       <li
         key={props.index}
-        onClick={handleClick}
         style={
           linethrough
-            ? { textDecoration: "line-through", cursor: "pointer" }
-            : { textDecoration: "none", cursor: "pointer" }
+            ? { textDecoration: "line-through" }
+            : { textDecoration: "none" }
         }
       >
-        {props.item}
+        <span onClick={handleClick}>{props.item}</span>
+        <button
+          className="delete"
+          onClick={() => {
+            props.deleteItem(props.id);
+          }}
+        >
+          delete
+        </button>
       </li>
     </div>
   );

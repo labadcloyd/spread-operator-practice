@@ -15,6 +15,13 @@ function Form() {
     setitems([...items, newItem]);
     setInput("");
   }
+  function handleDelete(id) {
+    setitems((prevValue) => {
+      return prevValue.filter((value, index) => {
+        return id !== index;
+      });
+    });
+  }
   return (
     <div>
       <form className="form">
@@ -31,7 +38,14 @@ function Form() {
       <div>
         <ul>
           {items.map((item, index) => {
-            return <Item key={index} item={item} />;
+            return (
+              <Item
+                id={index}
+                key={index}
+                item={item}
+                deleteItem={handleDelete}
+              />
+            );
           })}
         </ul>
       </div>

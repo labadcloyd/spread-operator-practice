@@ -76,4 +76,10 @@ li {
   text-align: left;
   position: relative;
   padding: 0.5rem;
+  cursor: pointer;
+}
+.delete {
+  margin: 10px;
+  padding: 10px;
+  cursor: pointer;
 }
