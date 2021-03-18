@@ -27,7 +27,7 @@ function Todo() {
     <div>
       <Input
         changeItemProp={changeItem}
-        inputeValueProp={inputValue}
+        inputValueProp={inputValue}
         addItemProp={addItem}
       />
       <div>
